@@ -71,6 +71,23 @@ void* mymemcpy(void* strDst, const void* strSrc, size_t n)
     return strDst;
 }
 
+int isLittleEndian()
+{
+    union un{
+        int a;
+        char b;
+    }c;
+    c.a = 1;
+    return (c.b == 1);
+}
+
+int isLittleEndian2()
+{
+    int num = 0x01020304;
+    char* pChar = (unsigned char*)&num;
+    return (*pChar == 1);
+}
+
 int main(void)
 {
     char str1[] = "helloworld";
