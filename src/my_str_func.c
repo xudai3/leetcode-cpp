@@ -84,7 +84,7 @@ int isLittleEndian()
 int isLittleEndian2()
 {
     int num = 0x01020304;
-    char* pChar = (unsigned char*)&num;
+    char* pChar = (char*)&num;
     return (*pChar == 1);
 }
 
